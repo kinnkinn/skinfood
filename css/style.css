@@ -1,0 +1,172 @@
+/* 레이아웃 */
+#header {border-bottom: 1px solid #ddd; box-sizing: border-box; z-index: 10000; transition: all 0.3s;}
+#main {}
+#main section#main-banner {position: relative; width: 100%; height: 540px;}
+#main section#main-subbanner {position: relative; height: 250px; margin-top: 30px;}
+#main section#line {padding: 40px 0;}
+#main section#new {background: url(../img/sub-slider-bg1.jpg) center center no-repeat; margin-top: 33px; padding: 40px 0; background-size: cover;}
+#main section#weekly-best {padding: 40px 0;}
+#main section#photo-review {}
+#main section#brandstory {margin-top: 95px;}
+#main section#sns {margin-top: 60px;}
+#footer {background: url(../img/bg_footer.svg) center center no-repeat; color: #ffffff; margin-top: 50px; background-size: cover;}
+
+
+/* 컨테이너 */
+#wrap {max-width: 2400px; margin: 0 auto; overflow: hidden;}
+.container {width: 1140px; margin: 0 auto; position: relative;}
+.box {width: 1020px; margin: 0 auto;}
+
+
+/* 공통 */
+body {font-family: 'YoonGothic', sans-serif; background-color: #ffffff;}
+body #main section h2 {font-size: 32px; color: #333; font-weight: 400; padding-top: 40px; margin-bottom: 38px;}
+/* .slide-box {overflow: hidden;}
+.slide-container {width: 3000vw; transition: transform 0.5s;} vw는 뷰포트width라는 뜻으로 현재 브라우저 창의 가로폭을 의미함 */
+/* .slide-inner {width: 100vw; float: left;}
+.slide-inner > img {width: 100%;} */
+ul.indicator {position: absolute; left: 50%; bottom: 20px; transform: translate(-50%, 0); line-height: 0;}
+ul.indicator > li {display: inline-block; margin-right: 5px;}
+ul.indicator > li > a {display: block; width: 8px; height: 8px; background-color: #ddd; text-indent: -9999px; border-radius: 10px;}
+ul.indicator > li.on > a {width: 20px; background-color: #000;}
+a.prev {position: absolute; left: 0; top: 50%; transform: translate(0, -50%);}
+a.next {position: absolute; right: 0; top: 50%; transform: translate(0, -50%);}
+a.prev,a.next > img {width: 84px; height: 84px;}
+#talk {position: fixed; right: 2%; bottom: 3%; z-index: 10000;}
+#talk > img {width: 103px; height: 100px;}
+
+
+/* 헤더 */
+#header .header-topmenu {height: 38px; background-color: #f9f9f9; font-size: 13px; color: #888;}
+#header .header-topmenu div.topmenu {float: right; height: 38px;}
+#header .header-topmenu ul {float: left; margin-right: 20px;}
+#header .header-topmenu ul li {float: left; margin: 0 20px; line-height: 38px; box-sizing: border-box;}
+#header .header-topmenu ul li a {}
+#header .header-topmenu select {float: left; margin-left: 20px; margin: 10px 0; color: #222;}
+#header .header-menu {position: relative; height: 100px;}
+#header .header-menu h1 {position: absolute; left: 0; top: 50%; transform: translate(0, 50%);}
+#header .header-menu h1 a {display: block;}
+#header .header-menu h1 a img {width: 145px;}
+#header .header-menu nav.gnb {float: right;}
+#header .header-menu nav.gnb > ul {float: left; margin-right: 40px;}
+#header .header-menu nav.gnb > ul > li {float: left; height: 100%; height: 100px; line-height: 100px; padding: 0 28px; box-sizing: border-box; text-align: center;}
+#header .header-menu nav.gnb > ul > li + li {margin-left: 30px;}
+#header .header-menu nav.gnb > ul > li > a {font-size: 18px; font-weight: 800; color: #333333;}
+#header .header-menu nav.gnb > ul > li > ul {position: absolute; top: 100%; display: none; transition: all 0.3s;}
+#header .header-menu nav.gnb > ul > li > ul > li {margin-top: 20px; line-height: 20px; position: relative; box-sizing: border-box;}
+#header .header-menu nav.gnb > ul > li > ul > li + li {margin-top: 10px;}
+#header .header-menu nav.gnb > ul > li > ul > li > a {display: block; font-size: 13px;}
+#header .header-menu nav.gnb > ul > li > ul > li > a:hover {font-weight: 800;}
+#header .header-menu nav.gnb div.gnb-icon {float: left; margin-top: 35px;}
+#header .header-menu nav.gnb a.search {margin-right: 20px; width: 30px; height: 30px; background-image: url(../img/icon-search.svg); background-repeat: no-repeat; float: left;}
+#header .header-menu nav.gnb a.cart {width: 30px; height: 30px; background-image: url(../img/icon-cart.svg); background-repeat: no-repeat; float: left;}
+
+
+/* 헤더 오픈 상태일때의 gnb */
+#header.open {position: relative; transition: all 0.3s;}
+#header.open::after {content: ''; height: 280px; position: absolute; left: 0; top: 139px; width: 100%; background-color: #ffffff; z-index: -10; transition: all 0.3s;}
+#header.open nav.gnb > ul > li > ul {display: block; height: 250px; position: absolute; top: 100px; text-align: left;}
+#header.open nav.gnb > ul > li > ul > li {width: 125px;}
+
+
+/* main 콘텐츠 영역 - 메인배너 */
+#main-banner div.slide-box {position: relative; width: 100%; height: 100%;}
+#main-banner div.slide-box > ul.slide-container {position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+#main-banner div.slide-box > ul.slide-container > li {position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden; display: none;}
+#main-banner div.slide-box > ul.slide-container > li.on {display: block;}
+#main-banner div.slide-box > ul.slide-container > li > img {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%;}
+
+
+
+/* main 콘텐츠 영역 - 서브배너 */
+#main-subbanner ul.slide {position: relative; left: 0; top: 0; width: 100%; height: 100%;}
+#main-subbanner ul.slide > li {display: none; position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden;}
+#main-subbanner ul.slide > li.on {display: block;}
+#main-subbanner ul.slide > li > a {display: block;}
+#main-subbanner ul.slide > li > a > img {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%;}
+
+
+/* main 콘텐츠 영역 - 라인별 제품추천 */
+#line h2 {}
+#line ul.line-itemlist {padding-bottom: 70px;}
+#line ul.line-itemlist > li {height: 530px; float: left; background-color: #ffffff; width: calc(50% - 10px);}
+#line ul.line-itemlist > li + li {margin-left: 20px;}
+#line ul.line-itemlist > li > a {display: block; margin-bottom: 32px;}
+#line ul.line-itemlist > li > a > img {width: 500px; height: auto;}
+#line ul.line-itemlist > li > div.line-item {border: 1px solid #f6f6f6; box-sizing: border-box; margin-bottom: 10px; width: 500px;}
+#line ul.line-itemlist > li > div.line-item > div.item-img {float: left;}
+#line ul.line-itemlist > li > div.line-item > div.item-img a {display: block;}
+#line ul.line-itemlist > li > div.line-item > div.item-img a img {width: 110px; height: 110px;}
+#line ul.line-itemlist > li > div.line-item > div.item-desc {width: calc(10 0% - 110px); height: 110px; box-sizing: border-box; float: left; padding: 20px 30px; box-sizing: border-box;}
+#line ul.line-itemlist > li > div.line-item > div.item-desc em {display: block; font-size: 15px;}
+#line ul.line-itemlist > li > div.line-item > div.item-desc span.sale-price {display: inline-block; text-decoration: line-through; color: #888888; font-size: 15px;}
+#line ul.line-itemlist > li > div.line-item > div.item-desc span.price {display: inline-block; font-size: 18px; font-weight: 800; margin: 10px 0 0 20px; color: #222222;}
+
+/* main 콘텐츠 영역 - 요즘 뜨는 상품 */
+#new h2 {text-align: center;}
+#new ul.new-item {padding-bottom: 60px;}
+#new ul.new-item li {width: calc(25% - 15px); height: 355px; float: left;}
+#new ul.new-item li + li {margin-left: 20px;}
+#new ul.new-item li:nth-child(4n) {margin-right: 0;}
+#new ul.new-item li a {display: block;}
+#new ul.new-item li a img {width: 240px; height: 240px; background-color: #ffffff;}
+#new ul.new-item li em {display: block; margin-top: 10px; font-size: 15px; color: #333; height: 40px;}
+
+
+/* main 콘텐츠 영역 - 이번주 베스트 */
+#weekly-best h2 {text-align: center;}
+#weekly-best div.best-menu {width: 1045px; padding: 15px 0 20px 0;}
+#weekly-best div.best-menu > a {float: left; width: 102px;}
+#weekly-best div.best-menu > a:last-child {margin-right: 0;}
+#weekly-best div.best-menu > a > img {width: 68px; height: 68px; display: block; margin: 0 auto;}
+#weekly-best div.best-menu > a > span {display: block; text-align: center; margin-top: 8px; font-size: 15px;}
+#weekly-best ul.weekly-best-item {overflow: hidden; padding-bottom: 40px;}
+#weekly-best ul.weekly-best-item > li {width: 240px; height: 355px; float: left; margin-right: 20px; margin-top: 20px;}
+#weekly-best ul.weekly-best-item > li:nth-child(4n) {margin-right: 0;}
+#weekly-best ul.weekly-best-item > li a {display: block;}
+#weekly-best ul.weekly-best-item > li a img {width: 240px; height: 240px; background-color: #ffffff;}
+#weekly-best ul.weekly-best-item > li em {display: block; margin-top: 10px;}
+#weekly-best ul.weekly-best-item > li span {}
+
+
+/* main 콘텐츠 영역 - 포토 리뷰 */
+#photo-review h2 {text-align: center;}
+#photo-review ul.photo-review-list {position: relative; height: 363px; padding-bottom: 60px;}
+#photo-review ul.photo-review-list > li {position: absolute; left: 0; top: 0; display: none;}
+#photo-review ul.photo-review-list > li.on {display: block;}
+#photo-review ul.photo-review-list > li > a {display: block;}
+#photo-review ul.photo-review-list > li > a > img {width: 1022px; height: 363px;}
+
+
+/* main 콘텐츠 영역 - 브랜드스토리 서브배너 */
+#brandstory {}
+#brandstory a img {width: 100%;}
+
+
+/* main 콘텐츠 영역 - SNS 인스타그램 */
+#sns div.sns-title {position: relative; height: 87px; border-bottom: 1px solid #ddd; width: 924px; margin: 0 auto;}
+#sns div.sns-title > img {position: absolute; left: 50%; top: 50%; transform: translate(-59% ,-50%);}
+#sns div.sns-desc {position: relative; height: 111px; width: 924px;  margin: 0 auto; box-sizing: border-box;}
+#sns div.sns-desc > a {display: inline-block; position: relative; left: 0; top: 50%; transform: translate(0, -50%);}
+#sns div.sns-desc > a.btn-follow {float: right; display: block; border: 1px solid; width: 98px; height: 32px; background-color: #ffffff; line-height: 32px; text-align: center; box-sizing: border-box; font-size: 13px;}
+#sns div.sns-desc img {width: 65px; height: 65px; border-radius: 50%;}
+#sns ul {width: 924px; display: block; margin: 0 auto;}
+#sns ul > li {background-color: darksalmon; float: left; margin: 0 4px 4px 0;}
+#sns ul > li:nth-child(6n) {margin-right: 0;}
+#sns ul > li > a {display: block;}
+#sns ul > li > a > img {width: 150px; height: 150px;}
+
+
+/* 푸터 */
+#footer div.container {padding-top: 176px; overflow: hidden;}
+#footer div.container > ul.footer-menu {}
+#footer div.container > ul.footer-menu > li {float: left; margin-right: 20px;}
+#footer div.container > ul.footer-menu > li > a {font-size: 15px;}
+#footer div.footer-info {width: 674px; height: 145px; float: left; font-size: 12px; color: #ddd;}
+#footer div.footer-info > p {margin-top: 12px;}
+#footer div.footer-info > p > span {}
+#footer div.footer-cs {width: 466px; height: 145px; float: left; color: #ddd; font-size: 12px;}
+#footer div.footer-cs > p {}
+#footer div.footer-cs > em {font-size: 32px; font-weight: 400; text-decoration: underline; font-style: normal; margin-top: 12px;}
+#footer div.footer-cs > span {display: block; margin-top: 12px;}
+

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKINFOOD 스킨푸드</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <style>
+/* 레이아웃 */
+#header {border-bottom: 1px solid #ddd;}
+#main {}
+#footer {}
+
+
+/* 컨테이너 */
+.container {width: 1140px; margin: 0 auto; position: relative;}
+
+/* 공통 */
+.slide-box {overflow: hidden;}
+/*vw는 뷰포트width라는 뜻으로 현재 브라우저 창의 가로폭을 의미함*/
+.slide-container {width: 3000vw; transition: transform 0.5s;}
+.slide-inner {width: 100vw; float: left;}
+.slide-inner > img {width: 100%;}
+
+/* 헤더 */
+#header .header-topmenu {height: 38px; background-color: #f9f9f9; font-size: 13px; color: #888;}
+#header .header-topmenu div.topmenu {float: right; height: 38px;}
+#header .header-topmenu ul {float: left; margin-right: 20px;}
+#header .header-topmenu ul li {float: left; margin: 0 20px; line-height: 38px; box-sizing: border-box;}
+#header .header-topmenu ul li a {}
+#header .header-topmenu select {float: left; margin-left: 20px; margin: 10px 0; color: #222;}
+
+#header .header-menu {position: relative; height: 100px;}
+#header .header-menu h1 {position: absolute; left: 0; top: 50%; transform: translate(0, 50%);}
+#header .header-menu h1 a {display: block;}
+#header .header-menu h1 a img {width: 145px;}
+#header .header-menu nav.gnb {float: right;}
+#header .header-menu nav.gnb > ul {float: left; margin-right: 40px;}
+#header .header-menu nav.gnb > ul > li {float: left; height: 100%; height: 100px; line-height: 100px; padding: 0 28px;}
+#header .header-menu nav.gnb > ul > li + li {margin-left: 20px;}
+#header .header-menu nav.gnb > ul > li > a {font-size: 20px; font-weight: bold;}
+#header .header-menu nav.gnb > ul > li > ul {background-color: #ddd; position: absolute; top: 100%; display: none;}
+#header .header-menu nav.gnb > ul > li > ul > li {margin-top: 20px; line-height: 20px;}
+#header .header-menu nav.gnb > ul > li > ul > li + li {margin-top: 10px;}
+#header .header-menu nav.gnb > ul > li > ul > li > a {display: block; font-size: 15px;}
+#header .header-menu nav.gnb > ul > li > ul > li > a:hover {font-weight: bold; font-size: 16px;}
+#header .header-menu nav.gnb div.gnb-icon {float: left; margin-top: 35px;}
+#header .header-menu nav.gnb a.search {margin-right: 20px; width: 30px; height: 30px; background-image: url(../img/icon-search.svg); background-repeat: no-repeat; float: left;}
+#header .header-menu nav.gnb a.cart {width: 30px; height: 30px; background-image: url(../img/icon-cart.svg); background-repeat: no-repeat; float: left;}
+
+
+/* 헤더 오픈 상태일때의 gnb */
+#header.open {position: relative;}
+#header.open::after {content: ''; height: 280px; position: absolute; left: 0; top: 138px; width: 100%; background-color: #ddd; z-index: -10;}
+#header.open nav.gnb > ul > li > ul {display: block; height: 280px;}  
+  
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <!-- 헤더 -->
+    <header id="header" class="open">
+      <div class="header-topmenu">
+        <div class="container">
+          <div class="topmenu">
+            <ul class="clearfix">
+              <li><a href="none">로그인</a></li>
+              <li><a href="none">회원가입</a></li>
+              <li><a href="none">마이페이지</a></li>
+              <li><a href="none">멤버쉽</a></li>
+              <li><a href="none">고객센터</a></li>
+            </ul>
+            <select name="" id="">
+              <option value="" selected="selected">KOREAN</option>
+              <option value="">ENGLISH</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="header-menu">
+        <div class="container">
+          <h1>
+            <a href="#none">
+              <img src="./img/logo.png" alt="SKINFOOD">
+            </a>
+          </h1>
+          <nav class="gnb">
+            <ul class="clearfix">
+              <li>
+                <a href="#none">상품</a>
+                <ul>
+                  <li><a href="#none">베스트&amp;신상품</a></li>
+                  <li><a href="#none">유형별</a></li>
+                  <li><a href="#none">고민별</a></li>
+                  <li><a href="#none">라인별</a></li>
+                  <li><a href="#none">타입별</a></li>
+                  <li><a href="#none">패키지</a></li>
+                  <li><a href="#none">비건</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#none">이벤트</a>
+                <ul class="gnb-2depth">
+                  <li><a href="#none">진행중 이벤트</a></li>
+                  <li><a href="#none">종료 이벤트</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#none">리뷰</a>
+                <ul class="gnb-2depth">
+                  <li><a href="none">리뷰</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#none">커뮤니티</a>
+                <ul class="gnb-2depth">
+                  <li><a href="none">멤버쉽</a></li>
+                  <li><a href="none">FAQ</a></li>
+                  <li><a href="none">공지사항</a></li>
+                  <li><a href="none">매장안내</a></li>
+                  <li><a href="none">1:1문의하기</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#none">어바웃 스킨푸드</a>
+                <ul class="gnb-2depth">
+                  <li><a href="none">브랜드 스토리</a></li>
+                  <li><a href="none">스킨푸드 소식</a></li>
+                  <li><a href="none">사회 공헌</a></li>
+                  <li><a href="none">전자공고</a></li>
+                  <li><a href="none">SNS</a></li>
+                  <li><a href="none">잘버렸습니다 캠페인</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="gnb-icon">
+              <a href="#none" class="search ir_pm">검색</a>
+              <a href="#none" class="cart ir_pm">장바구니</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+  </div>
+</body>
+</html>

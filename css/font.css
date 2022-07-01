@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+
+@font-face {
+  font-family: 'YoonGothic';
+  font-style: normal;
+  font-weight: 400;
+  src: local('※'),
+       url('../font/YoonGothic740.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'YoonGothic';
+  font-style: normal;
+  font-weight: 800;
+  src: local('※'),
+       url('../font/YoonGothic780.woff') format('woff');
+}
